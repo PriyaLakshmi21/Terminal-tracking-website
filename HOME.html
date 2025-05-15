@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Mangalore Airport Terminal Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #90e0ef;
+    }
+
+    header {
+      background-color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .main-content {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .main-content h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #023e8a;
+    }
+
+    .main-content p {
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .explore-btn {
+      padding: 14px 32px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .explore-btn:hover {
+      background-color: #00b4d8;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      .main-content h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="map.html">Map</a>
+    <a href="alerts.html">Alerts</a>
+    <a href="help.html">Help</a>
+  </nav>
+
+  <header>
+    <h1>Mangalore Airport Terminal Tracker</h1>
+    <p>Your guide to easily navigate through Mangalore International Airport and find the terminal information you need.</p>
+  </header>
+
+  <section class="main-content">
+    <h2>Explore the Features</h2>
+    <p>Our app offers seamless terminal tracking, helping you quickly locate gates, services, and essential facilities at the airport. Start by using the tools available in the navigation bar above.</p>
+    <a href="search.html" class="explore-btn">Find Your Terminal</a>
+  </section>
+
+</body>
+</html>

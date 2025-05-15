@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Alerts | Mangalore Airport Terminal Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 0 20px;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #90e0ef; }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #023e8a;
+      margin-bottom: 25px;
+      font-size: 2em;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      margin-bottom: 25px;
+    }
+
+    .alert-box {
+      background-color: #fff4e6;
+      padding: 20px;
+      border-left: 6px solid #ff8c00;
+      border-radius: 8px;
+      color: #924c00;
+      font-size: 1.1em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="alerts.html">Alerts</a>
+    <a href="map.html">Map</a>
+    <a href="help.html">Help</a>
+  </nav>
+
+  <div class="container">
+    <h2>Check Airline Alerts</h2>
+    <label for="airline">Select Your Airline:</label>
+    <select id="airline" onchange="showAlert()">
+      <option value="">-- Choose an Airline --</option>
+      <option value="indigo">IndiGo</option>
+      <option value="airindia">Air India</option>
+      <option value="spicejet">SpiceJet</option>
+      <option value="airasia">AirAsia</option>
+      <option value="vistara">Vistara</option>
+      <option value="gofirst">GoFirst</option>
+    </select>
+
+    <div id="alert" class="alert-box"></div>
+  </div>
+
+  <script>
+    function showAlert() {
+      const airline = document.getElementById("airline").value;
+      const alertBox = document.getElementById("alert");
+
+      let message = "";
+
+      switch(airline) {
+        case "indigo":
+          message = "IndiGo flights are experiencing a 30-minute delay due to weather conditions.";
+          break;
+        case "airindia":
+          message = "Air India flights are on time. You can travel smoothly.";
+          break;
+        case "spicejet":
+          message = "SpiceJet gate changed to Gate 7A due to terminal maintenance.";
+          break;
+        case "airasia":
+          message = "AirAsia operations are smooth. No delays at this time.";
+          break;
+        case "vistara":
+          message = "Vistara has a 15-minute delay due to air traffic.";
+          break;
+        case "gofirst":
+          message = "GoFirst flights are on schedule. No issues reported.";
+          break;
+        default:
+          message = "";
+      }
+
+      if (message) {
+        alertBox.style.display = "block";
+        alertBox.textContent = message;
+      } else {
+        alertBox.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

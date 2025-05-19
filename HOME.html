@@ -16,6 +16,40 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0077b6, #00b4d8);
       color: white;
+      overflow-x: hidden;
+      position: relative;
+      height: 100vh;
+    }
+
+    /* Airplane animation styles */
+    .airplane {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      z-index: 1000;
+      animation: flyLoop 6s linear infinite;
+    }
+
+    .plane-img {
+      width: 400px; /* Bigger size */
+      height: auto;
+      transform: rotate(-25deg);
+    }
+
+    @keyframes flyLoop {
+      0% {
+        bottom: -100px;
+        left: -100px;
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      100% {
+        bottom: 90%;
+        left: 100%;
+        transform: rotate(20deg);
+      }
     }
 
     nav {
@@ -107,10 +141,19 @@
       .main-content h2 {
         font-size: 1.5em;
       }
+
+      .plane-img {
+        width: 70px; /* Smaller on mobile */
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Airplane Image Animation -->
+  <div class="airplane">
+    <img src="airplane.png" alt="Airplane" class="plane-img" />
+  </div>
 
   <nav>
     <a href="home.html">Home</a>

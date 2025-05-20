@@ -107,8 +107,8 @@
 
   <div class="search-container">
     <h2>Find Your Terminal</h2>
-    <form>
-      <input type="text" id="flight-number" placeholder="Enter your Flight Number" required />
+    <form action="/search" method="post">
+      <input type="text" name="flight_number" id="flight-number" placeholder="Enter your Flight Number" required />
       <button type="submit">Search</button>
     </form>
   </div>
